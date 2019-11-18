@@ -11,9 +11,7 @@
     "bin"
   ],
   "scripts": {
-    "preprepare": "rm -rf dist/queries",
-    "prepare": "tsc",
-    "postprepare": "cp -r src/queries dist/queries",
+    "prepare": "tsc && rm -rf dist/queries && cp -r src/queries dist/queries",
     "test": "jest"
   },
   "repository": "Leko/github-issue-cli",
