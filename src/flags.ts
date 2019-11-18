@@ -1,5 +1,6 @@
 import yargs from "yargs"
 import doctorCommand from "./commands/doctor"
+import loginCommand from "./commands/login"
 import listCommand from "./commands/list"
 
 export const flags = yargs
@@ -11,5 +12,6 @@ export const flags = yargs
     },
   })
   .command(doctorCommand)
+  .command(loginCommand)
   .command(listCommand)
   .help()

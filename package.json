@@ -24,12 +24,19 @@
   },
   "homepage": "https://github.com/Leko/github-issue-cli#readme",
   "dependencies": {
+    "@octokit/graphql": "^4.3.1",
     "chalk": "^3.0.0",
+    "elegant-spinner": "^2.0.0",
     "find-up": "^4.1.0",
+    "inquirer": "^7.0.0",
+    "log-update": "^3.3.0",
+    "node-emoji": "^1.10.0",
     "yargs": "^15.0.0"
   },
   "devDependencies": {
+    "@types/inquirer": "^6.5.0",
     "@types/node": "^10.17.5",
+    "@types/node-emoji": "^1.8.1",
     "@types/yargs": "^13.0.3",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.2",
