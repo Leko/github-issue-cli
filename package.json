@@ -1,0 +1,38 @@
+{
+  "name": "github-issue-cli",
+  "version": "0.0.0",
+  "description": "CLI application to search for your good first issue",
+  "bin": {
+    "ghi": "./bin/ghi.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": "Leko/github-issue-cli",
+  "keywords": [
+    "github",
+    "good",
+    "first",
+    "issue",
+    "issue",
+    "cli"
+  ],
+  "author": "Leko <leko.noor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leko/github-issue-cli/issues"
+  },
+  "homepage": "https://github.com/Leko/github-issue-cli#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "find-up": "^4.1.0",
+    "yargs": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.17.5",
+    "@types/yargs": "^13.0.3",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  }
+}
