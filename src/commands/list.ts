@@ -69,7 +69,7 @@ export default {
         return willBeClosedEvents.length === 0
       })
       .sort(
-        (a, b) =>
+        (a: any, b: any) =>
           new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime()
       )
 
