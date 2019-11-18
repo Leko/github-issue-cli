@@ -5,6 +5,10 @@
   "bin": {
     "ghi": "./bin/ghi.js"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "preprepare": "rm -rf dist/queries",
     "prepare": "tsc",
