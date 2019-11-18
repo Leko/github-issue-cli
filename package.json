@@ -7,7 +7,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "bin"
   ],
   "scripts": {
     "preprepare": "rm -rf dist/queries",
