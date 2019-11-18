@@ -1,4 +1,5 @@
 import fs from "fs"
+import path from "path"
 import { CommandModule } from "yargs"
 import chalk from "chalk"
 import emoji from "node-emoji"
@@ -6,6 +7,11 @@ import inquirer from "inquirer"
 import { DEFAULT_PATH, resolve } from "../Config"
 import { getClient } from "../utils/graphql"
 import { showSpinnerWhileProcessing } from "../utils/showSpinnerWhileProcessing"
+
+const aboutMeQuery = fs.readFileSync(
+  path.join(__dirname, "..", "queries", "aboutMe.graphql"),
+  "utf8"
+)
 
 export default {
   command: "login",
@@ -46,15 +52,7 @@ export default {
     const viewer = await showSpinnerWhileProcessing(
       "Fetching your information from GitHub",
       async () => {
-        const { viewer }: any = await graphql(
-          `
-            {
-              viewer {
-                login
-              }
-            }
-          `
-        )
+        const { viewer }: any = await graphql(aboutMeQuery)
 
         return viewer
       }

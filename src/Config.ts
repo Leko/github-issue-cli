@@ -3,7 +3,13 @@ import fs from "fs"
 import path from "path"
 import { sync as findUp } from "find-up"
 
-export type Config =
+export type Config = {
+  queries: {
+    [repo: string]: {
+      [name: string]: string
+    }
+  }
+} & (
   | {
       token: string
       login: string
@@ -12,6 +18,7 @@ export type Config =
       token: null
       login: null
     }
+)
 
 const FILE_NAME = ".ghirc"
 export const DEFAULT_PATH = path.join(os.homedir(), FILE_NAME)
@@ -19,9 +26,10 @@ export const DEFAULT_PATH = path.join(os.homedir(), FILE_NAME)
 const defaultConfig: Config = {
   token: null,
   login: null,
+  queries: {},
 }
 
-export const resolve = (userConfig: string | null): Config => {
+export function resolve(userConfig: string | null): Config {
   if (userConfig && !fs.existsSync(userConfig)) {
     throw new Error(`${userConfig} does not exists`)
   }

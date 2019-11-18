@@ -1,0 +1,44 @@
+query issues($q: String!) {
+  search(type: ISSUE, first: 100, query: $q) {
+    edges {
+      node {
+        ... on Issue {
+          number
+          title
+          url
+          updatedAt
+          comments {
+            totalCount
+          }
+          labels(first: 100) {
+            nodes {
+              name
+              color
+            }
+          }
+          timelineItems(
+            first: 100
+            itemTypes: [REFERENCED_EVENT, CROSS_REFERENCED_EVENT]
+          ) {
+            edges {
+              node {
+                ... on CrossReferencedEvent {
+                  referencedAt
+                  resourcePath
+                  source {
+                    ... on PullRequest {
+                      number
+                      url
+                      title
+                    }
+                  }
+                  willCloseTarget
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

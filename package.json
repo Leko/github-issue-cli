@@ -6,6 +6,9 @@
     "ghi": "./bin/ghi.js"
   },
   "scripts": {
+    "preprepare": "rm -rf dist/queries",
+    "prepare": "tsc",
+    "postprepare": "cp -r src/queries dist/queries",
     "test": "jest"
   },
   "repository": "Leko/github-issue-cli",
@@ -24,17 +27,21 @@
   },
   "homepage": "https://github.com/Leko/github-issue-cli#readme",
   "dependencies": {
+    "@formatjs/intl-relativetimeformat": "^4.4.1",
     "@octokit/graphql": "^4.3.1",
     "chalk": "^3.0.0",
+    "chromatism": "^3.0.0",
     "elegant-spinner": "^2.0.0",
     "find-up": "^4.1.0",
     "inquirer": "^7.0.0",
     "log-update": "^3.3.0",
+    "micromatch": "^4.0.2",
     "node-emoji": "^1.10.0",
     "yargs": "^15.0.0"
   },
   "devDependencies": {
     "@types/inquirer": "^6.5.0",
+    "@types/micromatch": "^3.1.1",
     "@types/node": "^10.17.5",
     "@types/node-emoji": "^1.8.1",
     "@types/yargs": "^13.0.3",
