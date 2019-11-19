@@ -12,13 +12,11 @@ export function getSavedQueries(
   const { owner, name } = repo
   const queries = Object.entries(config.queries)
     .filter(([repo]) => isMatch(`${owner}/${name}`, repo))
+    .concat([["*/*", defaultQueries]])
     .reduce(
       (acc, [_, queries]) =>
         acc.concat(
-          Object.entries({
-            ...defaultQueries,
-            ...queries,
-          }).map(([name, query]) => ({ name, query }))
+          Object.entries(queries).map(([name, query]) => ({ name, query }))
         ),
       [] as { name: string; query: string }[]
     )
