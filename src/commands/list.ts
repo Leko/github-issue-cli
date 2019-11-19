@@ -49,19 +49,19 @@ export default {
       query = savedQueries[queryIndex]
     }
 
-    const { search }: any = await showSpinnerWhileProcessing(
+    const q = `is:open repo:${owner}/${name} ${query.query}`
+    const {
+      search,
+    }: any = await showSpinnerWhileProcessing(
       `Fetching issues ${owner}/${name} issues`,
-      async () =>
-        graphql(issuesQuery, {
-          q: `is:open repo:${owner}/${name} ${query.query}`,
-        })
+      async () => graphql(issuesQuery, { q })
     )
     const issues = search.edges.map(({ node }: any) => node)
     const noAssociatedIssues = issues
       .filter((issue: any) => {
-        const timelineItems = issue.timelineItems.edges.map(
-          ({ node }: any) => node
-        )
+        const timelineItems = issue.timelineItems.edges
+          .filter(Boolean)
+          .map(({ node }: any) => node)
         const willBeClosedEvents = timelineItems.filter(
           ({ willCloseTarget }: any) => willCloseTarget
         )
