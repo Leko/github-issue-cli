@@ -1,9 +1,11 @@
 # `ghi` - github-issue-cli
 
+![](https://user-images.githubusercontent.com/1424963/69118167-bfc6a580-0ad5-11ea-989d-ad7ea13631a4.gif)
+
 github-issue-cli(`ghi`) is CLI application to search for your good first issue.  
 This tool looks for issues that no one is working on.
 
-This tool is under development so if you use it, please be careful.
+Note: This tool is under development so if you use it, please be careful.
 
 ## Getting started
 
