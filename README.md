@@ -15,8 +15,8 @@ At first, please install `github-issue-cli` globally
 npm i -g github-issue-cli
 ```
 
-Next, You need to run a `login` subcommand to use ghi.
-(After installing github-issue-cli, you can use `ghi` command.)
+Next, You will need to run a `login` subcommand to use ghi.
+(After installing github-issue-cli, you will be able to use `ghi` command.)
 
 ```
 ghi login
@@ -26,7 +26,13 @@ The token you entered will be stored in `~/.ghirc`.
 
 ## Basic usage
 
-List issues with `good first issue` label that no one is working on microsoft/TypeScript.
+You can list issues with `good first issue` label by using following command:
+
+```
+ghi list [org]/[repo]
+```
+
+For example, the following command will list `good first issue` in `microsoft/TypeScript` that no one is working on.
 
 ```
 ghi list microsoft/TypeScript
@@ -36,9 +42,10 @@ ghi list microsoft/TypeScript
 
 ### Saved queries
 
-Do you want to search for issues other than `good first issue`? This can be achieved by using saved queries. Currently, to add or change a saved query, edit the `~/.ghirc` directly.
+If you want to search for issues with label other than `good first issue`, you can use saved queries.
+Currently, in order to add or change a saved query, edit the `~/.ghirc` directly.
 
-`.ghirc` is a JSON file. When you execute the login command, it has the following keys.
+`.ghirc` is a JSON file. When you execute the login command, it will be automatically generated with the following keys.
 
 ```json
 {
@@ -67,7 +74,7 @@ To register a custom query, add a `queries` field like this:
  }
 ```
 
-Specify the repository name directly under the `queries` field. You can also specify wildcards using an asterisk.  
+Specify the repository name directly under the `queries` field. You can also specify wildcards using an asterisk (`*`).  
 When executing the `list` command, if there are multiple queries that match the repository specified in its argument, select which query to execute.
 
 ## Contribution
