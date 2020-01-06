@@ -1,4 +1,6 @@
 import chalk from "chalk"
+import updateNotifier from "update-notifier"
+import pkg from "../package.json"
 import { flags } from "./flags"
 
 flags
@@ -11,3 +13,7 @@ flags
     process.exit(1)
   })
   .parse()
+
+process.on('beforeExit', () => {
+  updateNotifier({pkg}).notify()
+})
