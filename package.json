@@ -40,6 +40,7 @@
     "log-update": "^3.3.0",
     "micromatch": "^4.0.2",
     "node-emoji": "^1.10.0",
+    "update-notifier": "^4.0.0",
     "yargs": "^15.0.0"
   },
   "devDependencies": {
@@ -47,6 +48,7 @@
     "@types/micromatch": "^3.1.1",
     "@types/node": "^10.17.5",
     "@types/node-emoji": "^1.8.1",
+    "@types/update-notifier": "^2.5.0",
     "@types/yargs": "^13.0.3",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.2",
