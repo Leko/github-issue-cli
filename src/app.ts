@@ -14,6 +14,4 @@ flags
   })
   .parse()
 
-process.on('beforeExit', () => {
-  updateNotifier({pkg}).notify()
-})
+updateNotifier({pkg}).notify()
