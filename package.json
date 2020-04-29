@@ -1,6 +1,6 @@
 {
   "name": "github-issue-cli",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "CLI application to search for your good first issue",
   "bin": {
     "ghi": "./bin/ghi.js"
