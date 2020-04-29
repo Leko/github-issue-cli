@@ -1,6 +1,6 @@
 import chalk from "chalk"
 import updateNotifier from "update-notifier"
-import pkg from "../package.json"
+import pkg from "./package.json"
 import { flags } from "./flags"
 
 flags
@@ -14,4 +14,4 @@ flags
   })
   .parse()
 
-updateNotifier({pkg}).notify()
+updateNotifier({ pkg }).notify()
