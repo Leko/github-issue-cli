@@ -2,8 +2,6 @@ import fs from "fs"
 import path from "path"
 import { CommandModule } from "yargs"
 import inquirer from "inquirer"
-import IntlRelativeTimeFormat from "@formatjs/intl-relativetimeformat"
-import "@formatjs/intl-relativetimeformat/polyfill-locales"
 import { emojify } from "node-emoji"
 import chalk from "chalk"
 import * as chromatism from "chromatism"
@@ -74,7 +72,8 @@ export default {
       )
 
     const now = Date.now()
-    const formatter = new IntlRelativeTimeFormat("en-US", { numeric: "auto" })
+    // @ts-ignore Property 'RelativeTimeFormat' does not exist on type 'typeof Intl'
+    const formatter = new Intl.RelativeTimeFormat("en-US", { numeric: "auto" })
     noAssociatedIssues.forEach(
       ({ number, title, url, updatedAt, comments, labels }: any) => {
         const relative = formatter.format(

@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/Leko/github-issue-cli#readme",
   "dependencies": {
-    "@formatjs/intl-relativetimeformat": "^4.4.1",
     "@octokit/graphql": "^4.3.1",
     "chalk": "^3.0.0",
     "chromatism": "^3.0.0",
@@ -46,7 +45,7 @@
   "devDependencies": {
     "@types/inquirer": "^6.5.0",
     "@types/micromatch": "^3.1.1",
-    "@types/node": "^10.17.5",
+    "@types/node": "~13.13.4",
     "@types/node-emoji": "^1.8.1",
     "@types/update-notifier": "^2.5.0",
     "@types/yargs": "^13.0.3",
